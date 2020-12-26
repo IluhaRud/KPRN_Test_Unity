@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CanvasController.cs" />
     <Compile Include="Assets\Scripts\NextButton.cs" />
+    <Compile Include="Assets\Scripts\Person.cs" />
     <Compile Include="Assets\Scripts\PossibleAnswerButton.cs" />
     <Compile Include="Assets\Scripts\TestData.cs" />
     <Reference Include="UnityEngine">

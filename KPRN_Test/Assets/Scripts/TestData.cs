@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 /// <summary>
 /// Класс, который содержит информацию по данному тесту
@@ -23,9 +24,14 @@ public class TestData : MonoBehaviour
     /// Представляет динамический список канвасов с вопросами
     /// </summary>
     public List<Canvas> questions;
+    /// <summary>
+    /// Представляет сущность авторизованного клиента
+    /// </summary>
+    public Person person;
 
+    public Canvas results;
 
-    private void Awake()
+    private void Start()
     {
         int c = 0;
 
@@ -71,5 +77,14 @@ public class TestData : MonoBehaviour
             transform.Find("ResultsCanvas").gameObject.SetActive(true);
             transform.Find("ResultsCanvas").gameObject.transform.Find("Text").GetComponent<Text>().text = $"Ваш результат: {points} / {questions.Count}";
         }
+    }
+    public void ClickReturnToMainMenu()
+    {
+        points = 0;
+        numberOfQuestion = 0;
+        maxQuestions = 0;
+        questions = null;
+
+        SceneManager.LoadScene("MenuScene");
     }
 }
